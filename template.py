@@ -99,7 +99,7 @@ def set_template(args):
         args.data_test = 'DIV2K'
         args.data_partion = 0.1
         args.file_suffix = "_ii_list_darts_p192.pt"
-        args.save = "{}_{}_x{}_lr{}_ps{}_p{}_nms".format(today, args.model, args.scale, args.lr, args.patch_size, args.data_partion)
+        args.save = "{}_{}_x{}_lr{}_ps{}_p{}_darts".format(today, args.model, args.scale, args.lr, args.patch_size, args.data_partion)
 
     if args.template.find('RCAN_baseline') >= 0:
         args.model = 'RCAN'
