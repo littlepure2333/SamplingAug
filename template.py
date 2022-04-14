@@ -112,7 +112,7 @@ def set_template(args):
         args.scale = "2"
         args.device = "0"
         args.n_GPUs = 1
-        args.batch_size = 32
+        args.batch_size = 16
         args.print_every = 10
         args.reset = True
         args.data_train = 'DIV2K'
@@ -158,7 +158,7 @@ def set_template(args):
 
     if args.template.find('ESPCN_baseline') >= 0:
         args.model = 'ESPCN'
-        args.lr = 1e-3
+        args.lr = 1e-5
         args.patch_size = 192
         args.dir_data = dir_data
         args.scale = "2"
@@ -169,13 +169,10 @@ def set_template(args):
         args.reset = True
         args.data_train = 'DIV2K'
         args.data_test = 'DIV2K'
-        args.save = "{}_{}_x{}_lr{}_ps{}".format(today, args.model, args.scale, args.lr, args.patch_size)
+        args.save = "{}_{}_x{}_lr{}_ps{}_bs{}".format(today, args.model, args.scale, args.lr, args.patch_size, args.batch_size)
 
     if args.template.find('ESPCN_test') >= 0:
         args.model = 'ESPCN'
-        args.n_resgroups = 6
-        args.n_resblocks = 20
-        args.n_feats = 64
         args.patch_size = 192
         args.dir_data = dir_data
         args.scale = "2"
@@ -189,25 +186,25 @@ def set_template(args):
 
     if args.template.find('ESPCN_sa') >= 0:
         args.model = 'ESPCN'
-        args.lr = 1e-3
+        args.lr = 1e-5
         args.patch_size = 192
         args.dir_data = dir_data
         args.scale = "2"
         args.device = "0"
         args.n_GPUs = 1
-        args.batch_size = 16
+        args.batch_size = 32
         args.print_every = 10
         args.ext = "sep"
         args.reset = True
         args.data_train = 'DIV2K_PORTION'
         args.data_test = 'DIV2K'
-        args.data_partion = 0.1
+        args.data_partion = 0.001
         args.file_suffix = "_ii_list_p192.pt" #
         args.save = "{}_{}_x{}_lr{}_ps{}_p{}".format(today, args.model, args.scale, args.lr, args.patch_size, args.data_partion)
 
     if args.template.find('SRCNN_baseline') >= 0:
         args.model = 'SRCNN'
-        args.lr = 1e-4
+        args.lr = 1e-5
         args.patch_size = 192
         args.dir_data = dir_data
         args.scale = "2"
@@ -235,13 +232,13 @@ def set_template(args):
 
     if args.template.find('SRCNN_sa') >= 0:
         args.model = 'SRCNN'
-        args.lr = 1e-4
+        args.lr = 1e-5
         args.patch_size = 192
         args.dir_data = dir_data
         args.scale = "2"
         args.device = "0"
         args.n_GPUs = 1
-        args.batch_size = 16
+        args.batch_size = 32
         args.print_every = 10
         args.ext = "sep"
         args.reset = True
